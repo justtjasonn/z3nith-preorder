@@ -9,10 +9,27 @@
     */    
 }
 
+@font-face {
+    src: url("fonts/LeagueSpartan-VariableFont_wght.ttf");
+    font-family: "spartan";
+    /* Copyright 2020 The League Spartan Project Authors (https://github.com/theleagueof/league-spartan)
+
+        This Font Software is licensed under the SIL Open Font License, Version 1.1.
+        This license is copied below, and is also available with a FAQ at:
+        https://openfontlicense.org
+    */s
+}
+
 body, html{
     margin: 0;
     padding: 0;
     background-color: white
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .nav_links{
@@ -37,4 +54,50 @@ body, html{
     text-decoration: none;
     color: black;
     transition: ease-in-out 0.3s;
+    margin: 50px;
+    margin-bottom: 50px;
+}
+
+.insta_logo{
+    position: fixed;
+    z-index: 100;
+    bottom: 1vh;
+    right: 2vh;
+    color: black;
+    transition: ease-in-out 0.1s;
+}
+
+.insta_logo:hover{
+    transform: scale(1.2);
+}
+
+.main_body{
+    min-height: 60vh;
+}
+.page_title{
+    text-align: left;
+    margin-left: 5vh;
+    font-family: "spartan", sans-serif;
+    font-size: 8vh;
+}
+
+.subtitle{
+    font-family: "Raleway", sans-serif;
+    color: grey;
+    margin-left: 5vh;
+}
+
+.product_card{
+    background-color: grey;
+    width: min-content;
+    gap: 2rem;
+    margin-left: 3vh;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+.front{
+    height: 25rem;
+}
+.back{
+    height:     25rem;
 }
