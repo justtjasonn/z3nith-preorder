@@ -88,23 +88,56 @@ body, html{
     margin-left: 5vh;
 }
 
+.product_grid{
+    display: flex;
+    flex-direction: row;
+}
 .product_card{
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     background-color: grey;
     height: min-content;
-    width: fit-content;
+    width: 18rem;
     gap: 2rem;
     margin-left: 2rem;
+    margin-bottom: 2rem;
     padding: 1rem;
     border-radius: 1rem;
 }
-.front{
-    height: 25rem;
+
+.shirt_preview{
+    position: relative;
+    width: min(100%, 22rem);
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    background-color: rgba(255, 255, 255, 0.08);
 }
-.back{
-    height:     25rem;
+
+.shirt_image{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.shirt_back{
+    opacity: 0;
+}
+
+.shirt_preview:hover .shirt_back,
+.shirt_preview:focus-visible .shirt_back{
+    opacity: 1;
+}
+
+.shirt_preview:hover .shirt_front,
+.shirt_preview:focus-visible .shirt_front{
+    opacity: 0;
 }
 
 .info{
