@@ -182,3 +182,68 @@ hr{
     background-color: black;
     margin-top: 0.5rem;
 }
+
+.product_display{
+    width: 28rem;
+    margin: 3rem;
+    padding: 1rem;
+}
+
+.wslider{
+    position: relative;
+    display: flex;
+    overflow: hidden;
+}
+
+.wslider img{
+    display: none;
+}
+
+.slide{
+    height: 35rem;
+}
+
+.prev{
+    height: fit-content;
+    background: none;
+    border: none;
+    font-size: 2rem;
+}
+
+.next{
+    right: 0%;
+    height: fit-content;
+    background: none;
+    border: none;
+    font-size: 2rem;
+}
+
+img.displaySlide{
+    display: block;
+}
+
+.wslider button{
+    position: absolute;
+    color: rgb(58, 58, 58);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.wslider button:hover{
+    cursor: pointer;
+    filter: brightness(1.3);
+}
+
+.back_link{
+    font-family: "Raleway", sans-serif;
+    color: black;
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 1.5rem;
+    transition: ease-in-out 0.2s;
+    margin-left: 5vh;
+}
+
+.back_link:hover{
+    font-weight: bold;
+}
