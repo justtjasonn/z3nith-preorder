@@ -296,14 +296,19 @@ img.displaySlide{
     font-size: 2rem;
     font-weight: 600;
     padding: 0.5rem 1rem 0.2rem 1rem;
-    border: none;
+    border: solid grey 0.2rem;
     border-radius: 0.5rem;
     transition: ease-in-out 0.15s;
 }
 
 .size_btn:hover{
     cursor: pointer;
-    background-color: lightgrey;
+    filter: brightness(1.1);
+}
+
+.size_btn.selected{
+    background-color: grey;
+    color: white;
 }
 
 .white_btn{

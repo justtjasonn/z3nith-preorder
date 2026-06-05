@@ -77,3 +77,18 @@ function nextSlide() {
     showSlide(slideIndex);
     startSlider();
 }
+
+function selectS() {
+    document.querySelector('.size_btn.selected')?.classList.remove('selected');
+    event.target.classList.add('selected');
+}
+
+function selectM() {
+    document.querySelector('.size_btn.selected')?.classList.remove('selected');
+    event.target.classList.add('selected');
+}
+
+function selectL() {
+    document.querySelector('.size_btn.selected')?.classList.remove('selected');
+    event.target.classList.add('selected');
+}
