@@ -59,6 +59,10 @@ body, html{
     margin-bottom: 50px;
 }
 
+.socials{
+    display: flex;
+    gap: 1rem;
+}
 .insta_logo{
     position: fixed;
     z-index: 100;
@@ -68,8 +72,23 @@ body, html{
     transition: ease-in-out 0.1s;
 }
 
+
+.sc_logo{
+    position: fixed;
+    z-index: 100;
+    bottom: 1vh;
+    right: 8vh;
+    color: black;
+    transition: ease-in-out 0.1s;  
+    transform: scale(1.2); 
+}
+
 .insta_logo:hover{
     transform: scale(1.2);
+}
+
+.sc_logo:hover{
+    transform: scale(1.4);
 }
 
 .main_body{
@@ -184,18 +203,20 @@ hr{
 }
 
 .product_display{
+    display: flex;
+    flex-direction: row;
+    gap: 10rem;
     width: 28rem;
     margin: 3rem;
     padding: 1rem;
 }
 
-.wslider{
+.slider{
     position: relative;
     display: flex;
-    overflow: hidden;
 }
 
-.wslider img{
+.slider img{
     display: none;
 }
 
@@ -222,14 +243,14 @@ img.displaySlide{
     display: block;
 }
 
-.wslider button{
+.slider button{
     position: absolute;
     color: rgb(58, 58, 58);
     top: 50%;
     transform: translateY(-50%);
 }
 
-.wslider button:hover{
+.slider button:hover{
     cursor: pointer;
     filter: brightness(1.3);
 }
@@ -246,4 +267,77 @@ img.displaySlide{
 
 .back_link:hover{
     font-weight: bold;
+}
+
+.selectors{
+    height: fit-content;
+    gap: 1rem;
+    margin: auto;
+    display:flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.color_selector{
+    display: flex;
+    flex-direction: row;
+    gap: 0.2rem;
+}
+
+.size_selector{
+    display: flex;
+    flex-direction: row;
+    gap: 0.4rem;
+}
+
+.size_btn{
+    font-family: "spartan", sans-serif;
+    background-color: lightgrey;
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem 0.2rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    transition: ease-in-out 0.15s;
+}
+
+.size_btn:hover{
+    cursor: pointer;
+    background-color: lightgrey;
+}
+
+.white_btn{
+    background-color: white;
+    width: 2rem;
+    height: 2rem;
+    border-color: grey;
+    border-radius: 0.5rem;
+    border-style: solid;
+    transition: ease-in-out 0.2s;
+}
+
+.white_btn:hover{
+    cursor: pointer;
+    background-color: lightgrey;
+}
+
+.black_btn{
+    background-color: rgb(45, 45, 45);
+    width: 2rem;
+    height: 2rem;
+    border-color: grey;
+    border-radius: 0.5rem;
+    border-style: solid;
+    transition: ease-in-out 0.2s;
+}
+
+.black_btn:hover{
+    cursor: pointer;
+    background-color: black;
+}
+
+.selector_title{
+    font-family: "spartan", sans-serif;
+    color: white;
+    font-weight: bold;  
 }

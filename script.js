@@ -1,40 +1,79 @@
-const slides = document.querySelectorAll('.slides img');
-
+const slides = Array.from(document.querySelectorAll('.slides img'));
 let slideIndex = 0;
 let intervalId = null;
+let activeColor = null;
 
-document.addEventListener('DOMContentLoaded', initalizeSlider);
+document.addEventListener('DOMContentLoaded', initializeSlider);
 
-function initalizeSlider() {
-    if(slides.length > 0){
-        slides[slideIndex].classList.add('displaySlide')
-        intervalId = setInterval(nextSlide, 5000);
+function initializeSlider() {
+    if (!slides.length) {
+        return;
     }
+
+    activeColor = slides[0].dataset.color || null;
+    showSlide(0);
+    startSlider();
 }
 
-function showSlide(index){
+function startSlider() {
+    clearInterval(intervalId);
+    intervalId = setInterval(nextSlide, 5000);
+}
 
-    if(index >= slides.length){
-        slideIndex = 0;
+function getVisibleSlides() {
+    if (!activeColor) {
+        return slides;
     }
 
-    else if(index < 0){
-        slideIndex = slides.length - 1;
+    const visibleSlides = slides.filter(slide => slide.dataset.color === activeColor);
+    return visibleSlides.length > 0 ? visibleSlides : slides;
+}
+
+function showSlide(index) {
+    const visibleSlides = getVisibleSlides();
+
+    if (!visibleSlides.length) {
+        return;
     }
-    slides.forEach(slide =>{
+
+    slideIndex = ((index % visibleSlides.length) + visibleSlides.length) % visibleSlides.length;
+
+    slides.forEach(slide => {
         slide.classList.remove('displaySlide');
-    })
-    slides[slideIndex].classList.add('displaySlide');
+    });
+
+    visibleSlides[slideIndex].classList.add('displaySlide');
 }
 
-function prevSlide(){
-    clearInterval(intervalId);
-    slideIndex --;
+function setColor(color) {
+    const matchingSlides = slides.filter(slide => slide.dataset.color === color);
+
+    if (!matchingSlides.length) {
+        return;
+    }
+
+    activeColor = color;
+    slideIndex = 0;
     showSlide(slideIndex);
+    startSlider();
 }
 
-function nextSlide(){
-    clearInterval(intervalId);
-    slideIndex ++;
+function turnWhite() {
+    setColor('white');
+}
+
+function turnBlack() {
+    setColor('black');
+}
+
+function prevSlide() {
+    slideIndex -= 1;
     showSlide(slideIndex);
+    startSlider();
+}
+
+function nextSlide() {
+    slideIndex += 1;
+    showSlide(slideIndex);
+    startSlider();
 }
