@@ -92,3 +92,9 @@ function selectL() {
     document.querySelector('.size_btn.selected')?.classList.remove('selected');
     event.target.classList.add('selected');
 }
+
+document.getElementById('email_section').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    console.log('Email submitted:', event.target.querySelector('input[type="email"]').value);
+})

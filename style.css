@@ -346,3 +346,45 @@ img.displaySlide{
     color: white;
     font-weight: bold;  
 }
+
+#email_section{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    
+}
+
+#email_section input{
+    font-family: "spartan","Raleway", sans-serif;
+    padding: 0.5rem;
+    margin: auto;
+    background-color: transparent;
+    font-size: 1.5rem;
+    width: max-content;
+    border: solid grey 0.2rem;
+    border-radius: 0.25rem;
+}
+
+#email_section input:invalid{
+    background-color: rgb(215, 215, 215);
+}
+
+#email_section button{
+    background-color: rgb(52, 52, 52);
+    color: white;
+    font-size: 1rem;
+    font-family: "spartan", sans-serif;
+    font-weight: 550;
+    border: none;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 0.25rem;
+}
+
+#email_section .submitted{
+    background-color: red;
+}
+
+#email_section button:hover{
+    cursor: pointer;
+}
