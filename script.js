@@ -2,6 +2,8 @@ const slides = Array.from(document.querySelectorAll('.slides img'));
 let slideIndex = 0;
 let intervalId = null;
 let activeColor = null;
+let selectedColor = null;
+let selectedSize = null;
 
 document.addEventListener('DOMContentLoaded', initializeSlider);
 
@@ -10,7 +12,6 @@ function initializeSlider() {
         return;
     }
 
-    activeColor = slides[0].dataset.color || null;
     showSlide(0);
     startSlider();
 }
@@ -53,16 +54,21 @@ function setColor(color) {
     }
 
     activeColor = color;
+    selectedColor = color;
     slideIndex = 0;
     showSlide(slideIndex);
     startSlider();
 }
 
-function turnWhite() {
+function turnWhite(button) {
+    document.querySelector('.color_selector .selected')?.classList.remove('selected');
+    button?.classList.add('selected');
     setColor('white');
 }
 
-function turnBlack() {
+function turnBlack(button) {
+    document.querySelector('.color_selector .selected')?.classList.remove('selected');
+    button?.classList.add('selected');
     setColor('black');
 }
 
@@ -78,23 +84,55 @@ function nextSlide() {
     startSlider();
 }
 
-function selectS() {
+function selectSize(button, size) {
     document.querySelector('.size_btn.selected')?.classList.remove('selected');
-    event.target.classList.add('selected');
+    button.classList.add('selected');
+    selectedSize = size;
 }
 
-function selectM() {
-    document.querySelector('.size_btn.selected')?.classList.remove('selected');
-    event.target.classList.add('selected');
+const emailSection = document.getElementById('email_section');
+
+if (emailSection) {
+    emailSection.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        if (!selectedColor || !selectedSize) {
+            alert('Please select a color and size before submitting.');
+            return;
+        }
+
+        const shirtName = document.querySelector('.main_body')?.dataset.shirtName
+            || document.querySelector('.page_title')?.textContent.trim()
+            || document.title;
+        const email = event.target.querySelector('input[type="email"]').value;
+
+        const orderData = {
+            shirtName,
+            size: selectedSize,
+            color: selectedColor,
+            email
+        };
+
+        fetch("https://formspree.io/f/xqeoedql", {
+            method: "POST",
+            body: JSON.stringify(orderData),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                // Success!
+                alert("Thanks for your interest! We'll notify you with updates!");
+                emailSection.reset(); // Clears the email input box
+            } else {
+                // Formspree returned an error
+                alert("Oops! There was a problem submitting your order. Please try again.");
+            }
+        }).catch(error => {
+            // A network error occurred
+            alert("Oops! There was a network problem. Please check your connection and try again.");
+            console.error(error);
+        });
+    });
 }
-
-function selectL() {
-    document.querySelector('.size_btn.selected')?.classList.remove('selected');
-    event.target.classList.add('selected');
-}
-
-document.getElementById('email_section').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    console.log('Email submitted:', event.target.querySelector('input[type="email"]').value);
-})

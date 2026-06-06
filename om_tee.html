@@ -18,22 +18,36 @@
         </nav>
     </header>
     <main>
-        <section class="main_body">
+        <section class="main_body" data-shirt-name="only me! tee">
             <a href="preorder.html" class="back_link">← Back</a>
             <h1 class="page_title">ONLY ME! TEE</h1>
             <p class="subtitle">OFFICIAL Z3NITH CLOTHING</p>
             <div class="product_display">
                 <div class="slider">
                     <div class="slides">
-                        <img class="slide" data-color="black" src="images/shirts/F_om_b.png" alt="I HATE LIL Z tee front">
-                        <img class="slide" data-color="black" src="images/shirts/B_om_b.png" alt="I HATE LIL Z tee back">
+                        <img class="slide white_slide" data-color="white" src="images/shirts/F_om_w.png" alt="ONLY ME! tee front">
+                        <img class="slide white_slide" data-color="white" src="images/shirts/B_om_w.png" alt="ONLY ME! tee back">
+                        <img class="slide black_slide" data-color="black" src="images/shirts/F_om_b.png" alt="ONLY ME! tee front">
+                        <img class="slide black_slide" data-color="black" src="images/shirts/B_om_b.png" alt="ONLY ME! tee back">
                     </div>
-                    <button class="prev" onclick="prevSlide()">&#10094;</button>
-                    <button class="next" onclick="nextSlide()">&#10095;</button>
+                    <button type="button" class="prev" onclick="prevSlide()">&#10094;</button>
+                    <button type="button" class="next" onclick="nextSlide()">&#10095;</button>
                 </div>
-                <div class="color_selector">
-                        <button class="color default_color" onclick="turnWhite()"></button>
-                        <button class="color" onclick="turnBlack()"></button>
+                <div class="selectors">
+                    <p class="price_title">$119 HKD</p>
+                    <div class="color_selector">
+                        <button type="button" class="white_btn" onclick="turnWhite(this)"></button>
+                        <button type="button" class="black_btn" onclick="turnBlack(this)"></button>
+                    </div>
+                    <div class="size_selector">
+                        <button type="button" class="size_btn" onclick="selectSize(this, 'S')">S</button>
+                        <button type="button" class="size_btn" onclick="selectSize(this, 'M')">M</button>
+                        <button type="button" class="size_btn" onclick="selectSize(this, 'L')">L</button>
+                    </div>
+                    <form id="email_section">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Notify Me</button>
+                    </form>
                 </div>
             </div>
     </main>

@@ -171,6 +171,14 @@ body, html{
     text-align: right;
 }
 
+.price_title{
+    font-family: "Raleway", sans-serif;
+    color: black;
+    font-size: 2.5rem;
+    width: max-content;
+    font-weight: bold;
+}
+
 .product_name{
     margin: 0;
 }
@@ -311,6 +319,11 @@ img.displaySlide{
     color: white;
 }
 
+.color_selector .selected{
+    outline: 0.2rem solid black;
+    outline-offset: 0.15rem;
+}
+
 .white_btn{
     background-color: white;
     width: 2rem;
@@ -341,12 +354,6 @@ img.displaySlide{
     background-color: black;
 }
 
-.selector_title{
-    font-family: "spartan", sans-serif;
-    color: white;
-    font-weight: bold;  
-}
-
 #email_section{
     display: flex;
     flex-direction: column;
@@ -357,7 +364,6 @@ img.displaySlide{
 #email_section input{
     font-family: "spartan","Raleway", sans-serif;
     padding: 0.5rem;
-    margin: auto;
     background-color: transparent;
     font-size: 1.5rem;
     width: max-content;

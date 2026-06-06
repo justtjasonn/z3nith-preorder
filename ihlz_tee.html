@@ -18,7 +18,7 @@
         </nav>
     </header>
     <main>
-        <section class="main_body">
+        <section class="main_body" data-shirt-name="I HATE LIL Z tee">
             <a href="preorder.html" class="back_link">← Back</a>
             <h1 class="page_title">I HATE LIL Z TEE</h1>
             <p class="subtitle">OFFICIAL Z3NITH CLOTHING</p>
@@ -30,24 +30,23 @@
                         <img class="slide black_slide" data-color="black" src="images/shirts/F_ihlz_b.png" alt="I HATE LIL Z tee front">
                         <img class="slide black_slide" data-color="black" src="images/shirts/black_shirt.png" alt="I HATE LIL Z tee back">
                     </div>
-                    <button class="prev" onclick="prevSlide()">&#10094;</button>
-                    <button class="next" onclick="nextSlide()">&#10095;</button>
+                    <button type="button" class="prev" onclick="prevSlide()">&#10094;</button>
+                    <button type="button" class="next" onclick="nextSlide()">&#10095;</button>
                 </div>
                 <div class="selectors">
-                    <p class="selector_title">Color:</p>
+                    <p class="price_title">$119 HKD / 16 USD</p>
                     <div class="color_selector">
-                        <button class="white_btn" onclick="turnWhite()"></button>
-                        <button class="black_btn" onclick="turnBlack()"></button>
+                        <button type="button" class="white_btn" onclick="turnWhite(this)"></button>
+                        <button type="button" class="black_btn" onclick="turnBlack(this)"></button>
                     </div>
-                    <p class="selector_title">Size:</p>
                     <div class="size_selector">
-                        <button type="button" class="size_btn" onclick="selectS()">S</button>
-                        <button type="button" class="size_btn" onclick="selectM()">M</button>
-                        <button type="button" class="size_btn" onclick="selectL()">L</button>
+                        <button type="button" class="size_btn" onclick="selectSize(this, 'S')">S</button>
+                        <button type="button" class="size_btn" onclick="selectSize(this, 'M')">M</button>
+                        <button type="button" class="size_btn" onclick="selectSize(this, 'L')">L</button>
                     </div>
                     <form id="email_section">
                         <input type="email" placeholder="Enter your email" required>
-                        <button type="submit"">Notify Me</button>
+                        <button type="submit">Notify Me</button>
                     </form>
                 </div>
             </div>
