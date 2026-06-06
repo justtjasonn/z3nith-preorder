@@ -109,7 +109,8 @@ body, html{
 
 .product_grid{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    gap: 2rem;
 }
 .product_card{
     display: flex;
@@ -126,7 +127,28 @@ body, html{
     padding: 1rem;
     border-radius: 1rem;
 }
-
+@media (min-width: 576px){
+    .product_grid{
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+    }
+    .product_card{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-color: grey;
+        height: min-content;
+        width: 18rem;
+        gap: 2rem;
+        margin-left: 0rem;
+        margin-bottom: 2rem;
+        padding: 1rem;
+        border-radius: 1rem;
+    }
+}
 .shirt_preview{
     position: relative;
     width: min(100%, 22rem);
@@ -171,14 +193,6 @@ body, html{
     text-align: right;
 }
 
-.price_title{
-    font-family: "Raleway", sans-serif;
-    color: black;
-    font-size: 2.5rem;
-    width: max-content;
-    font-weight: bold;
-}
-
 .product_name{
     margin: 0;
 }
@@ -212,11 +226,23 @@ hr{
 
 .product_display{
     display: flex;
-    flex-direction: row;
-    gap: 10rem;
+    flex-direction: column;
+    gap: 1rem;
     width: 28rem;
-    margin: 3rem;
+    max-width: 90vw;
+    margin: 0.5rem;
     padding: 1rem;
+}
+
+@media (min-width: 576px){
+    .product_display{
+        display: flex;
+        flex-direction: row;
+        gap: 10rem;
+        width: 28rem;
+        margin: 3rem;
+        padding: 1rem;
+    }
 }
 
 .slider{
@@ -229,7 +255,7 @@ hr{
 }
 
 .slide{
-    height: 35rem;
+    height: 80vh;
 }
 
 .prev{
@@ -263,6 +289,19 @@ img.displaySlide{
     filter: brightness(1.3);
 }
 
+@media (min-width: 576px){
+    .slide{
+        height: 40rem;
+    }
+    .next{
+        right: 0%;
+        height: fit-content;
+        background: none;
+        border: none;
+        font-size: 2rem;
+    }
+}
+
 .back_link{
     font-family: "Raleway", sans-serif;
     color: black;
@@ -280,10 +319,37 @@ img.displaySlide{
 .selectors{
     height: fit-content;
     gap: 1rem;
-    margin: auto;
+    margin: none;
     display:flex;
     flex-direction: column;
     padding: 2rem;
+}
+
+.price_title{
+    font-family: "Raleway", sans-serif;
+    color: black;
+    font-size: 1.25rem;
+    width: max-content;
+    font-weight: bold;
+}
+
+@media (min-width: 576px){
+    .selectors{
+        height: fit-content;
+        gap: 1rem;
+        margin: auto;
+        display:flex;
+        flex-direction: column;
+        padding: 2rem;
+    }
+
+    .price_title{
+        font-family: "Raleway", sans-serif;
+        color: black;
+        font-size: 2.5rem;
+        width: max-content;
+        font-weight: bold;
+    }
 }
 
 .color_selector{
