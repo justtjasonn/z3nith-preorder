@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>z3nith preorder</title>
+    <title>only me! tees preorder</title>
 </head>
 <body>
-    <header class="header">
+    <header>
         <nav class="navbar">
             <a href="index.html" class="logo">Z</a>
             <div class="nav_links">
@@ -18,16 +18,36 @@
         </nav>
     </header>
     <main>
-        <section class="main_body">
-            <div class="hero_section">
-                <h1 class="page_title">LIL Z PREORDERS</h1>
-                <p class="subtitle">OFFICIAL Z3NITH CLOTHING</p>
-                <p class="subtitle">LIMITED EDITIONS</p>
-                <a href="preorder.html" class="redirect_btn subtitle">
-                    PREORDER NOW
-                </a>
+        <section class="main_body" data-shirt-name="only me! hoodie">
+            <a href="preorder.html" class="back_link">← Back</a>
+            <h1 class="page_title">ONLY ME! HOODIE</h1>
+            <p class="subtitle">OFFICIAL Z3NITH CLOTHING</p>
+            <div class="product_display">
+                <div class="slider">
+                    <div class="slides">
+                        <img class="slide white_slide" data-color="white" src="images/shirts/F_omah_w.png" alt="ONLY ME! hoodie front">
+                        <img class="slide white_slide" data-color="white" src="images/shirts/B_omah_w.png" alt="ONLY ME! hoodie back">
+                    </div>
+                    <button type="button" class="prev" onclick="prevSlide()">&#10094;</button>
+                    <button type="button" class="next" onclick="nextSlide()">&#10095;</button>
+                </div>
+                <div class="selectors">
+                    <p class="price_title">$219 HKD</p>
+                    <div class="color_selector">
+                        <button type="button" class="white_btn" onclick="turnWhite(this)"></button>
+                    </div>
+                    <div class="size_selector">
+                        <button type="button" class="size_btn" onclick="selectSize(this, 'S')">S</button>
+                        <button type="button" class="size_btn" onclick="selectSize(this, 'M')">M</button>
+                        <button type="button" class="size_btn" onclick="selectSize(this, 'L')">L</button>
+                    </div>
+                    <form id="email_section">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Notify Me</button>
+                    </form>
+                </div>
             </div>
-        </section>
+    </main>
     </main>
     <footer>
         <div class="socials">
