@@ -579,3 +579,83 @@ img.displaySlide{
 .redirect_btn:hover{
     text-decoration: underline;
 }
+
+.contact_info{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-left: 5vh;
+}
+
+@media (max-width: 720px){
+    .contact_info{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-left: 1rem;
+    }
+}
+
+.contact_page_logo{
+    color: black;
+    transition: ease-in-out 0.2s;
+}
+
+.contact_page_logo:hover{
+    scale: 1.1;
+}
+.contact_text{
+    font-family: "Raleway", sans-serif;
+    color:black;
+    margin: auto;
+}
+
+a{
+    text-decoration: none;
+}
+
+.snippet_section{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-left: 5vh;
+    margin-top: 2rem;
+}
+
+.snippets{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin:auto;
+    margin-right: 5vh;
+}
+.snippet{
+
+}
+.snippet_title{
+    font-family: "spartan", sans-serif;
+    font-weight: bold;
+    color: black;
+}
+@media (max-width: 720px){
+    .snippets{
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-left: none;
+    }
+}
+
+.hero_section{
+    margin: none;
+    padding: none;
+}
+
+#snippet_title{
+    font-family: "spartan", sans-serif;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    margin-top: 2rem;
+}
