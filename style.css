@@ -265,7 +265,6 @@ html{
 
 .product_name{
     margin: 0;
-    font-size: ;
 }
 .order_btn{
     background-color: rgb(52, 52, 52);
@@ -570,7 +569,19 @@ img.displaySlide{
     font-family: "spartan", sans-serif;
     font-weight: bold;
     color: black;
+    font-size: 5rem;
     text-decoration: none;
+}
+
+@media (max-width: 720px){
+    .redirect_btn{
+        font-family: "spartan", sans-serif;
+        font-weight: bold;
+        color: black;
+        font-size: 3rem;
+        text-align: center;
+        text-decoration: none;
+    }
 }
 
 .redirect_btn p{
@@ -658,4 +669,6 @@ a{
     color: black;
     text-align: center;
     margin-top: 2rem;
+    margin-left: none;
+    text-align: left;  
 }
