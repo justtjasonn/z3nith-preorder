@@ -607,7 +607,7 @@ img.displaySlide{
 .contact_text{
     font-family: "Raleway", sans-serif;
     color:black;
-    margin: auto;
+    text-align: center;
 }
 
 a{
