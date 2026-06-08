@@ -631,6 +631,7 @@ a{
     gap: 1rem;
     margin-left: 5vh;
     margin-top: 2rem;
+    margin-bottom: 7rem;
 }
 
 .snippets{
@@ -639,9 +640,6 @@ a{
     gap: 2rem;
     margin:auto;
     margin-right: 5vh;
-}
-.snippet{
-
 }
 .snippet_title{
     font-family: "spartan", sans-serif;
