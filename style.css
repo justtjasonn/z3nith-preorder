@@ -132,6 +132,7 @@ html{
 
 @media (min-width: 720px){
     .product_grid{
+        margin: auto;
         display: flex;
         flex-direction: row;
         gap: 2rem;
@@ -196,6 +197,7 @@ html{
         flex-direction: column;
         gap: 2rem;
         padding: 0 1rem;
+        margin: none;
     }
 
     .product_card{
@@ -631,7 +633,7 @@ a{
     gap: 1rem;
     margin-left: 5vh;
     margin-top: 2rem;
-    margin-bottom: 7rem;
+    margin-bottom: 4rem;
 }
 
 .snippets{
